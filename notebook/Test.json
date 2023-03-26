@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "5766ab9c-44bd-483d-8d9e-2e4805ec721a"
+				"spark.autotune.trackingId": "75f8a2f7-595e-4af0-8a3c-e33ac73eaadd"
 			}
 		},
 		"metadata": {
@@ -250,7 +250,79 @@
 				"source": [
 					"pepperDataFrame = pd.read_csv(\"https://github.com/absolute-dinesh/azure-synapse-trained/blob/main/data/sample.csv?raw=true\")"
 				],
-				"execution_count": 23
+				"execution_count": 40
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"pepperDataFrame.columns"
+				],
+				"execution_count": 41
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"print(pepperDataFrame.loc[:1,'Name']) "
+				],
+				"execution_count": 43
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"print(pepperDataFrame['Name']) "
+				],
+				"execution_count": 45
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"dataFrame1.iloc[:, 1]"
+				],
+				"execution_count": 46
 			},
 			{
 				"cell_type": "code",
