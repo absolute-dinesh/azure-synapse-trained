@@ -1,0 +1,150 @@
+{
+	"name": "ALS Implemeentation",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "Smallpool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "b4cdbc5a-a405-416e-bc52-11617e905868"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/ef2a5cb2-a811-44b8-8426-7d437f63e90e/resourceGroups/DataFactory/providers/Microsoft.Synapse/workspaces/testingmyself/bigDataPools/Smallpool",
+				"name": "Smallpool",
+				"type": "Spark",
+				"endpoint": "https://testingmyself.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Smallpool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"small_dataset_url = 'http://files.grouplens.org/datasets/movielens/ml-latest-small.zip'\n",
+					""
+				],
+				"execution_count": 1
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"**https://github.com/absolute-dinesh/spark-movie-lens/blob/master/notebooks/building-recommender.ipynb**"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"import os\n",
+					"\n",
+					"datasets_path = os.path.join('..', 'datasets')\n",
+					"small_dataset_path = os.path.join(datasets_path, 'ml-latest-small.zip')"
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"import urllib\n",
+					"small_f = urllib.urlretrieve(small_dataset_url, small_dataset_path)\n",
+					""
+				]
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"import zipfile\n",
+					"\n",
+					"with zipfile.ZipFile(small_dataset_path, \"r\") as z:\n",
+					"    z.extractall(datasets_path)\n",
+					""
+				]
+			}
+		]
+	}
+}
