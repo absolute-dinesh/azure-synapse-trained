@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "75f8a2f7-595e-4af0-8a3c-e33ac73eaadd"
+				"spark.autotune.trackingId": "f8b3bcfd-d9a8-4a6f-811d-830e8914b885"
 			}
 		},
 		"metadata": {
@@ -304,7 +304,7 @@
 				"source": [
 					"print(pepperDataFrame['Name']) "
 				],
-				"execution_count": 45
+				"execution_count": 47
 			},
 			{
 				"cell_type": "code",
@@ -320,9 +320,9 @@
 					}
 				},
 				"source": [
-					"dataFrame1.iloc[:, 1]"
+					"pepperDataFrame.iloc[:, 1]"
 				],
-				"execution_count": 46
+				"execution_count": 49
 			},
 			{
 				"cell_type": "code",
@@ -351,6 +351,56 @@
 					"dataFrame1"
 				],
 				"execution_count": 20
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"import pandas as pd\n",
+					"\n",
+					"listPepper = [\n",
+					"  {'Scoville' : 50, 'Name' : 'Bell pepper', 'Feeling' : 'Not even spicy'},\n",
+					"  {'Scoville' : 5000, 'Name' : 'Espelette pepper', 'Feeling' : 'Uncomfortable'},\n",
+					"  {'Scoville' : 500000, 'Name' : 'Chocolate habanero', 'Feeling' : 'Practically ate pepper spray'},\n",
+					"]\n",
+					"\n",
+					"dataFrame1 = pd.DataFrame(listPepper)\n",
+					"dataFrame2 = dataFrame1.set_index('Scoville')\n",
+					"\n",
+					"dataFrame2"
+				],
+				"execution_count": 50
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"dataFrame1 = pd.DataFrame(listPepper)\n",
+					"dataFrame1.set_index('Scoville', inplace=True)\n",
+					"\n",
+					"dataFrame1"
+				],
+				"execution_count": 51
 			},
 			{
 				"cell_type": "markdown",
