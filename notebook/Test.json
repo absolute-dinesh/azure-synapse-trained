@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "f8b3bcfd-d9a8-4a6f-811d-830e8914b885"
+				"spark.autotune.trackingId": "59e5dfcf-09f5-45bc-8987-96bb94f9f1b1"
 			}
 		},
 		"metadata": {
@@ -401,6 +401,25 @@
 					"dataFrame1"
 				],
 				"execution_count": 51
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"new_index = [50, 5000, 'New value not present in the data frame']\n",
+					"dataFrame1.reindex(new_index)"
+				],
+				"execution_count": 52
 			},
 			{
 				"cell_type": "markdown",
