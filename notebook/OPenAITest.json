@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "09cfd313-5565-4e01-a9b7-eebf6cf5908d"
+				"spark.autotune.trackingId": "20bbf2fd-dcd2-4ed8-9307-1947b4f2d0fe"
 			}
 		},
 		"metadata": {
@@ -213,9 +213,9 @@
 					}
 				},
 				"source": [
-					"df1 = df.withColumn('intgr', regexp_replace('Scoville','\\\\.','\\\\,'))"
+					"df1 = df.withColumn('intgr', regexp_replace('Scoville','\\\\.','').cast('int'))"
 				],
-				"execution_count": 48
+				"execution_count": 78
 			},
 			{
 				"cell_type": "code",
@@ -251,7 +251,7 @@
 				"source": [
 					"df1.show()"
 				],
-				"execution_count": 49
+				"execution_count": 79
 			},
 			{
 				"cell_type": "code",
@@ -288,7 +288,7 @@
 				"source": [
 					"df1.select(col('intgr'),col('Name')).show(10)"
 				],
-				"execution_count": 66
+				"execution_count": 80
 			},
 			{
 				"cell_type": "code",
@@ -322,9 +322,27 @@
 					}
 				},
 				"source": [
-					"df1.sum()"
+					"df.printSchema()"
 				],
-				"execution_count": null
+				"execution_count": 81
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"df1.select(avg('intgr').alias(\"avg\"),sum('intgr').alias(\"sum\")).show()"
+				],
+				"execution_count": 87
 			},
 			{
 				"cell_type": "code",
