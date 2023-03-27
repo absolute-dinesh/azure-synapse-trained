@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "8e680f34-777f-4884-a842-971171d80ac3"
+				"spark.autotune.trackingId": "1dc4bad2-3aa4-45aa-ad01-b496f94265cb"
 			}
 		},
 		"metadata": {
@@ -358,9 +358,45 @@
 					}
 				},
 				"source": [
-					"df.filter(df.intgr >= 50).show()"
+					"df1.filter(col('intgr') >= 50).show()"
 				],
-				"execution_count": 88
+				"execution_count": 90
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"df1.groupBy(substring(\"name\", 1, 1)).sum('intgr').show()"
+				],
+				"execution_count": 96
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"df1 = df1.withColumn('strltr', col = substring(\"name\",1,1))"
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
