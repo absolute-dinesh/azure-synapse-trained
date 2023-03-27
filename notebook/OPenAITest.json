@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "783c909e-903c-4d31-90fe-168307340b6d"
+				"spark.autotune.trackingId": "6938b704-9c11-4a47-9f03-d522ab759841"
 			}
 		},
 		"metadata": {
@@ -376,7 +376,7 @@
 					}
 				},
 				"source": [
-					"df1.select(col('intgr'),col('name')).filter(col('intgr') <= 50).groupBy(substring(\"name\", 1, 1).alias('frstltr')).agg(sum('intgr').alias('sum')).show()"
+					"df1.select(col('intgr'),col('name')).filter(col('intgr') > 50).groupBy(substring(\"name\", 1, 1).alias('frstltr')).agg(sum('intgr').alias('sum'), avg(\"intgr\")).show()"
 				],
 				"execution_count": 104
 			},
