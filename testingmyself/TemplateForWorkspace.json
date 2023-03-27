@@ -271,7 +271,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "91a3b9a3-b479-4bd2-b750-e54559de9948"
+						"spark.autotune.trackingId": "0e5f80d5-8e86-443c-92f3-7442c520be3e"
 					}
 				},
 				"metadata": {
@@ -649,10 +649,10 @@
 							}
 						},
 						"source": [
-							"df1.select(col('intgr'),col('name')).filter(col('intgr') <= 50).groupBy(substring(\"name\", 1, 1).alias('frstltr')).agg(sum('intgr').alias('sum')).show()"
+							"df1.select(col('intgr'),col('name')).filter(col('intgr') >= 50).groupBy(substring(\"name\", 1, 1).alias('frstltr')).agg(sum('intgr').alias('sum'), avg(\"intgr\")).show()"
 						],
 						"outputs": [],
-						"execution_count": 104
+						"execution_count": 112
 					},
 					{
 						"cell_type": "code",
@@ -668,10 +668,48 @@
 							}
 						},
 						"source": [
-							"df1 = df1.withColumn('strltr', col = substring(\"name\",1,1))"
+							"df1 = df1.withColumn('frstltrname', col = substring('name',1,1))"
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 108
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"df1.show()"
+						],
+						"outputs": [],
+						"execution_count": 109
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"df1.groupBy(col('frstltrname')).agg(sum('intgr')).show()"
+						],
+						"outputs": [],
+						"execution_count": 111
 					},
 					{
 						"cell_type": "code",
