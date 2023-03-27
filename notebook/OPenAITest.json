@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "2453903c-9ae4-4d22-ae1f-44410f61803a"
+				"spark.autotune.trackingId": "80b35948-a2e2-493b-9da8-84c5abda447b"
 			}
 		},
 		"metadata": {
@@ -378,7 +378,7 @@
 				"source": [
 					"df1.select(col('intgr'),col('name')).filter(col('intgr') > 50).groupBy(substring(\"name\", 1, 1).alias('frstltr')).agg(sum('intgr').alias('sum'), avg(\"intgr\")).show()"
 				],
-				"execution_count": 1
+				"execution_count": 105
 			},
 			{
 				"cell_type": "code",
