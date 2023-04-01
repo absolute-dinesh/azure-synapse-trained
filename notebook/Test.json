@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "59e5dfcf-09f5-45bc-8987-96bb94f9f1b1"
+				"spark.autotune.trackingId": "8572ec4d-d0af-4c1a-b792-6ec540d9a3b2"
 			}
 		},
 		"metadata": {
@@ -57,7 +57,7 @@
 					"import matplotlib.pyplot as plt\n",
 					"import seaborn as sns"
 				],
-				"execution_count": 2
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -100,7 +100,7 @@
 					"import string\n",
 					""
 				],
-				"execution_count": 6
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
