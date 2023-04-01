@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "8572ec4d-d0af-4c1a-b792-6ec540d9a3b2"
+				"spark.autotune.trackingId": "867ce85f-c07c-421b-aac7-e86616d7868a"
 			}
 		},
 		"metadata": {
@@ -119,6 +119,42 @@
 					"ch = pd.read_csv(\"https://github.com/absolute-dinesh/Tensorflow-in-10-Minutes/blob/main/Churn.csv?raw=true\")"
 				],
 				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"pk = spark.createDataFrame(ch)"
+				],
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"pk.show()"
+				],
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
